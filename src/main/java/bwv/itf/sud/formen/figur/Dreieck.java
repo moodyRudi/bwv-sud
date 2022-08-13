@@ -5,7 +5,8 @@ import bwv.itf.sud.exceptions.InvalidInputException;
 public class Dreieck implements Figur {
 
 	private static final String ERROR_NEGATIV = "Fehler beim Erstellen des Dreiecks: Eine Seitenlänge war <= 0";
-	private static final String ERROR_VERHAELTNIS = "Fehler beim Erstellen des Dreiecks: Das Verhältnis der Seitenlängen war ungültig";
+	private static final String ERROR_VERHAELTNIS = "Fehler beim Erstellen des Dreiecks: "
+			+ "Das Verhältnis der Seitenlängen war ungültig";
 
 	private double seite1;
 	private double seite2;
