@@ -64,7 +64,7 @@ class PolygonTest {
 	}
 	
 	@Test
-	@DisplayName("flaeche: Gibt die korrekte Flaeche zurück")
+	@DisplayName("flaeche: Gibt die korrekte Fläche zurück")
 	void shouldGetFlaeche() {
 		double inkreisRadius = LAENGE_INITIAL / (2 * Math.tan(Math.PI / ANZAHL_SEITEN_INITIAL));
 		double flaecheDreieck = LAENGE_INITIAL * inkreisRadius / 2;
@@ -72,6 +72,15 @@ class PolygonTest {
 		double tatsFlaeche = polygon.flaeche();
 		
 		assertEquals(erwFlaeche, tatsFlaeche, MAX_ABWEICHUNG);
+	}
+	
+	@Test
+	@DisplayName("umkreisradius: Gibt den korrekten Umkreisradius zurück")
+	void shouldGetUmkreisradius() {
+		double erwUmkreisradius = LAENGE_INITIAL / (2 * Math.sin(Math.PI / ANZAHL_SEITEN_INITIAL));
+		double tatsUmkreisradius = polygon.umkreisradius();
+		
+		assertEquals(erwUmkreisradius, tatsUmkreisradius);
 	}
 	
 	private class PolygonTestKlasse extends Polygon {

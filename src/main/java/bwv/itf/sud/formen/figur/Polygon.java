@@ -5,7 +5,8 @@ import bwv.itf.sud.exceptions.InvalidInputException;
 public abstract class Polygon implements Figur {
 	
 	private static final String ERROR_LAENGE = "Fehler beim Erstellen des Polygons: Die Seitenlänge war <= 0";
-	private static final String ERROR_ANZAHL_SEITEN = "Fehler beim Erstellen des Polygons: Die Anzahl der Seiten war zu gering";
+	private static final String ERROR_ANZAHL_SEITEN = "Fehler beim Erstellen des Polygons: "
+			+ "Die Anzahl der Seiten war zu gering";
 	
 	private int anzahlSeiten;
 	private Dreieck dreieck;
@@ -38,6 +39,10 @@ public abstract class Polygon implements Figur {
 	
 	public double getLaenge() {
 		return dreieck.getSeite1();
+	}
+	
+	public double umkreisradius() {
+		return dreieck.getSeite1() / (2 * Math.sin(Math.PI / anzahlSeiten));
 	}
 	
 	private static double umkreisradius(int anzahlSeiten, double laenge) {
